@@ -4,7 +4,6 @@ Welcome to our Final Project Repository!
 For this Final Project we will be making a focus tracker with growing crystals*-* You can view the details of our project inside our Project Proposal.
 
 ### Here's our great Kunoichis :
-
 **1. Btari Aliya (05111840000012)**
 
 **2. Erlinda Argyanti N. (05111840000017)**
@@ -17,5 +16,4 @@ For this Final Project we will be making a focus tracker with growing crystals*-
 
 
 ### Here's our to do list and the kunoichi's in charge :
-
-[Trello : ](https://trello.com/b/4eV6MUhP/grafsoy)
+[Trello : https://trello.com/b/4eV6MUhP/grafsoy](https://trello.com/b/4eV6MUhP/grafsoy)
