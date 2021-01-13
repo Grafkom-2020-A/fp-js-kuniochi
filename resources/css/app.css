@@ -1,0 +1,13 @@
+.switchButton input { 
+    display: none; 
+}
+
+.switchButton .seatButton { 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    background: yellow; 
+}
+
+.switchButton input:checked + .seatButton { 
+    background: red; 
+}
