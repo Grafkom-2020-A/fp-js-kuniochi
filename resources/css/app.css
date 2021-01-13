@@ -11,3 +11,13 @@
 .switchButton input:checked + .seatButton { 
     background: red; 
 }
+
+.navbar-custom {
+    /* background-color: linear-gradient(to right, #C7B3CC, #268AB2); */
+    background-color: lightgreen;
+}
+
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: green; 
+}
