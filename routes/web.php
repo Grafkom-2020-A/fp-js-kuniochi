@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+Route::get('/tari-coba', 'App\Http\Controllers\DashboardController@tariCoba');
