@@ -17,8 +17,8 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->string('task_name');
             $table->integer('task_interval');
-            $table->date('task_date');
-            $table->boolean('task_comp');
+            $table->date('task_date')->nullable();
+            $table->boolean('task_comp')->default(0);
             $table->timestamps();
         });
     }

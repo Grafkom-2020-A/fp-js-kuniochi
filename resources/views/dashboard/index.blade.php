@@ -79,7 +79,8 @@
                         </div>
                         <div class="card-body">                            
                             <ul class="list-group mt-3 mb-4 text-left">
-                                <li class="list-group-item d-flex justify-content-between">Selesaikan Grafkom
+                                @foreach ($tasks as $task)
+                                <li class="list-group-item d-flex justify-content-between">{{ $task->task_name }}
                                     <div class="d-flex flex-row">
                                         <span type="button" class="iconify align-self-center mr-2" data-icon="bx:bxs-pencil" data-inline="false"
                                             data-toggle="modal" data-target="#editTugas"></span>
@@ -88,14 +89,7 @@
                                     </div>
                                     
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between disabled">Perbaiki Mockup
-                                    <div class="d-flex flex-row">
-                                        <span type="button" class="iconify align-self-center mr-2" data-icon="bx:bxs-pencil" data-inline="false"
-                                            data-toggle="modal" data-target="#editTugas"></span>
-                                        <span type="button" class="iconify align-self-center" data-icon="bi:trash-fill" data-inline="false"
-                                            data-toggle="modal" data-target="#hapusTugas"></span>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                             {{-- button trigger modal --}}
                             <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" 
