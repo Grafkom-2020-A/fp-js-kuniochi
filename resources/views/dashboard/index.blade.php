@@ -1,19 +1,34 @@
 @extends('layouts.master')
 
-@section('content')
+@section('head')
+    <title>Dashboard</title>
     <style>
-            body {
+        body {
             height: 100%;
-            }
-            .vertical-center {
+        }
+        .vertical-center {
             min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
             min-height: 100vh; /* These two lines are counted as one :-)       */
             width: 100%;
             display: flex;
             align-items: center;
-            }
+        }
+        canvas {
+            /* pointer-events: auto; */
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            margin-top: -1000px;
+            /* position: absolute; */
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
+@endsection
 
+@section('content')
+<canvas></canvas>
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -24,9 +39,6 @@
             {{session('fail')}}
         </div>
     @endif
-    <head>
-        <title>Dashboard</title>
-    </head>
     <body>
         
         @include('dashboard.create')
@@ -37,12 +49,7 @@
             <div class="row text-center vertical-center">
                 {{-- <div class="container col-sm-6"> --}}
                 <div class="col-md-8 order-md-1">
-                    <div class="pricing-header px-3 py-3 pt-md-3 pb-md-3 mx-auto text-center">
-                        <div class="px-3 py-3 pt-md-3 pb-md-3">
-                            <img src="https://cdn.shopify.com/s/files/1/1241/7134/products/screenshot129_2000x.png?v=1567239029" 
-                            class="img-fluid" style="width: auto; height: 300px;">
-                        </div>
-                        
+                    <div class="pricing-header px-3 py-3 pt-md-3 pb-md-3 mx-auto text-center">         
                         <h1 class="display-4 m-2" id="countdown" style="margin-top:300px!important">Belum Dimulai</h1>
 
                         <button type="button" class="btn btn-primary m-3 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
@@ -122,7 +129,8 @@
                 @csrf
                 @method('DELETE')
 
-                <button class="btn btn-danger" type="submit" value="Submit">Hapus</button>
+                <a href="/dashboard/{{$task->id}}/delete" class="btn btn-danger btn-sm">Delete</a>
+                {{-- <button class="btn btn-danger" type="submit" value="Submit">Hapus</button> --}}
             </div>
             </div>
         </div>

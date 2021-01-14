@@ -33,11 +33,21 @@ crystal1.load('/js/models/glb/crystal-1.glb', function(gltf) {
     console.error(error);
 } );
 
+// var camera_pivot = new THREE.Object3D()
+// var Y_AXIS = new THREE.Vector3( 0, 1, 0 );
 
+// scene.add( camera_pivot );
+// camera_pivot.add( camera );
+// camera.position.set(0, 0, -10);
+// camera.lookAt( camera_pivot.position );
+
+// camera_pivot.rotateOnAxis( Y_AXIS, 0.01 );
 
 // add orbit control
 var controls = new OrbitControls(camera, renderer.domElement);
 // controls.update();
+
+console.log(camera.position);
 
 // Directional light
 var directionalLight = new THREE.DirectionalLight(0xff1493, 1.0);

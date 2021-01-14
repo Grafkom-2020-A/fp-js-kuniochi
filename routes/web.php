@@ -22,7 +22,7 @@ Route::get('/auth/{provider}', [App\Http\Controllers\Auth\LoginController::class
 Route::get('/auth/{provider}/callback', [App\Http\Controllers\Auth\LoginController::class, 'memanggilLayanan'])->name('google-callback');
 
 
-// Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     
@@ -30,8 +30,9 @@ Route::get('/auth/{provider}/callback', [App\Http\Controllers\Auth\LoginControll
 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
     Route::post('/dashboard/create', 'App\Http\Controllers\DashboardController@create');
-    Route::get('/dashboard/edit', 'App\Http\Controllers\BookController@edit'); 
+    Route::get('/dashboard/edit', 'App\Http\Controllers\BookController@edit');
+    Route::get('/dashboard/{id}/delete', 'App\Http\Controllers\BookController@edit');  
 
     Route::resource('/dashboard', 'App\Http\Controllers\DashboardController');
 
-// });
+});
