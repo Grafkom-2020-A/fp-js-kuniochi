@@ -47,10 +47,6 @@
                 {{-- <div class="container col-sm-6"> --}}
                 <div class="col-md-8 order-md-1">
                     <div class="pricing-header px-3 py-3 pt-md-3 pb-md-3 mx-auto text-center">
-                        <div class="px-3 py-3 pt-md-3 pb-md-3">
-                            <img src="https://cdn.shopify.com/s/files/1/1241/7134/products/screenshot129_2000x.png?v=1567239029" 
-                            class="img-fluid" style="width: auto; height: 300px;">
-                        </div>
                         
                         <h1 class="display-4 m-2" style="margin-top:300px!important">25 : 00 : 00</h1>
 
