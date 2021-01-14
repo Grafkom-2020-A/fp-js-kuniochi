@@ -62,6 +62,8 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
+                                <a href="{{ url('auth/google') }}" class="btn btn-primary">Masuk dengan Google</a>
                             </div>
                         </div>
                     </form>

@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Socialite;
+use Auth;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -49,5 +52,32 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function mengalihkanlayanan($layanan)
+    {
+        return Socialite::driver($layanan)->redirect();
+    }
+
+    public function memanggilLayanan($layanan)
+    {
+        $user = Socialite::driver($layanan)->stateless()->user();
+        $authUser = $this->findOrCreateUser($user, $layanan);
+        Auth::login($authUser, true);
+        return redirect($this->redirectTo);
+    }
+
+    public function findOrCreateUser($user, $layanan)
+    {
+        $authUser = User::where('id_layanan', $user->id)->first();
+        if($authUser){
+            return $authUser;
+        }
+        return User::create([
+            'name'      => $user->name,
+            'email'     => $user->email,
+            'layanan'  => strtoupper($layanan),
+            'id_layanan'   => $user->id
+        ]);
     }
 }
