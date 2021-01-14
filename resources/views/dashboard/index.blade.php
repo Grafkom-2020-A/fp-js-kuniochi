@@ -117,6 +117,10 @@
                 </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+
+                @csrf
+                @method('DELETE')
+
                 <button class="btn btn-danger" type="submit" value="Submit">Hapus</button>
             </div>
             </div>

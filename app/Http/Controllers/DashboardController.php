@@ -22,23 +22,19 @@ class DashboardController extends Controller
     }
 
     public function edit(Task $task) {
-        return view('dashboard.edit', compact('dashboard'));
+        $task = Task::find($task->id);
+        return view('dashboard/edit', ['task' => $task]);
     }
 
     public function update(Request $request, Task $task) {
-        $request->validate([
-            'task_name' => 'required',
-            'task_interval' => 'required'
-        ]);
         $task->update($request->all());
 
-        return redirect()->route('dashboard.index')
-                        ->with('success', 'Task Updated Sucessfully.');
+        return redirect('/dashboard')->with('success', 'Task Updated Sucessfully.');
     }
 
     public function delete(Task $task) {
+        $task = Task::find($task->id);
         $task->delete($task);
-
         return redirect('/dashboard')->with('success', 'Task Deleted Sucessfully.');
     }
 }
