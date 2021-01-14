@@ -2,10 +2,6 @@ import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threej
 import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
 
-// Get window dimension
-var ww = document.documentElement.clientWidth || document.body.clientWidth;
-var wh = window.innerHeight;
-
 // add scene
 var scene = new THREE.Scene();
 scene.background = new THREE.Color(0xdddddd);
@@ -49,14 +45,6 @@ directionalLight.position.set(6, 1, -5);
 // directionalLight.castShadow = true;
 
 scene.add(directionalLight);
-
-// function updateLight() {
-//     directionalLight.target.updateMatrixWorld();
-//     helper.update();
-// }
-// updateLight();
-
-
 
 const animate = function () {
     requestAnimationFrame(animate);
