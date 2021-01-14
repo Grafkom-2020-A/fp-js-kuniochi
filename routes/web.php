@@ -1,5 +1,9 @@
 <?php
 
+// namespace App\Http\Controllers\Auth;
+
+// use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +24,7 @@ Route::get('/', function () {
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
 Route::get('/tari-coba', 'App\Http\Controllers\DashboardController@tariCoba');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
