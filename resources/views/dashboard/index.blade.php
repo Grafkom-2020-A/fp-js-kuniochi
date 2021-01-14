@@ -28,6 +28,7 @@
         <title>Dashboard</title>
     </head>
     <body>
+        
         @include('dashboard.create')
         @include('dashboard.edit')
 
@@ -42,7 +43,7 @@
                             class="img-fluid" style="width: auto; height: 300px;">
                         </div>
                         
-                        <h1 class="display-4 m-2">25 : 00 : 00</h1>
+                        <h1 class="display-4 m-2" id="countdown">Belum Dimulai</h1>
 
                         <button type="button" class="btn btn-primary m-3 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                             Mulai
@@ -133,6 +134,7 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script> --}}
     {{-- <script src="{{ asset('js/build/GLTFLoader.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/build/OrbitControl.js') }}"></script> --}}
+    <script src="{{ asset('js/timer.js') }}"></script>
     <script type="module" src="{{ asset('js/main.js') }}"></script>
 @endsection
 
