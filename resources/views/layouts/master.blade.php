@@ -39,9 +39,9 @@
                     <li class="nav-item @yield('Income')">
                         <a class="nav-link" href="/income">Income</a>
                     </li> --}}
-                    {{-- <li class="nav-item @yield('Log Out')">
-                        <a class="nav-link" href="/logout">Log Out</a>
-                    </li> --}}
+                    <li class="nav-item @yield('Log Out')">
+                        <a class="nav-link" href="{{ route('logout') }}">Keluar</a>
+                    </li>
                 </ul>
             </div>
         </nav>
