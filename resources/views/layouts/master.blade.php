@@ -3,14 +3,17 @@
     <head>
         <title></title>
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        {{-- bootstrap 4 / 4.3 --}}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        {{-- bootstrap 5 --}}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/app.css">
     </head>
 
     <body>
         <!-- NAVBAR -->
         <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Cryst<b>foker</b></a>
+            <a class="navbar-brand">Cryst<b>foker</b></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -18,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item @yield('Home')">
-                        <a class="nav-link" href="/dashboard">Profile</a>
+                        <a class="nav-link" href="/dashboard">Profil</a>
                     </li>
                     <li class="nav-item @yield('Category')">
-                        <a class="nav-link" href="/dashboard">Settings</a>
+                        <a class="nav-link" href="/dashboard">Pengaturan</a>
                     </li>
                     {{-- <li class="nav-item @yield('Book')">
                         <a class="nav-link" href="/book">Book</a>
