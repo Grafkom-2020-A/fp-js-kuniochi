@@ -2,15 +2,17 @@ import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threej
 import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
 import {GLTFLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/loaders/GLTFLoader.js';
 
+var canvas = document.querySelector("canvas");
+
 // add scene
 var scene = new THREE.Scene();
-scene.background = new THREE.Color(0xdddddd);
-var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000);
-// var camera = new THREE.PerspectiveCamera(15, ww / wh, 0.01, 1000);
-camera.position.set(0, 0, 20);
+scene.background = new THREE.Color(0xffffff);
+const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+camera.position.set(10, 0, 20);
 
 // add renderer
-var renderer = new THREE.WebGLRenderer();
+// var renderer = new THREE.WebGLRenderer();
+var renderer = new THREE.WebGLRenderer({canvas: canvas});
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.setSize(window.innerWidth, window.innerHeight);

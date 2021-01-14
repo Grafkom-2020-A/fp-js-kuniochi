@@ -1,19 +1,33 @@
 @extends('layouts.master')
 
-@section('content')
+@section('head')
+    <title>Dashboard</title>
     <style>
-            body {
+        body {
             height: 100%;
-            }
-            .vertical-center {
+        }
+        .vertical-center {
             min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
             min-height: 100vh; /* These two lines are counted as one :-)       */
             width: 100%;
             display: flex;
             align-items: center;
-            }
+        }
+        canvas {
+            /* pointer-events: auto; */
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
     </style>
+@endsection
 
+@section('content')
+<canvas></canvas>
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -24,11 +38,9 @@
             {{session('fail')}}
         </div>
     @endif
-    <head>
-        <title>Dashboard</title>
-    </head>
-    
+
         <div class="container">
+            {{-- <canvas id="myCanvas"></canvas> --}}
             {{-- bagian kiri --}}
             <div class="row text-center vertical-center">
                 {{-- <div class="container col-sm-6"> --}}
