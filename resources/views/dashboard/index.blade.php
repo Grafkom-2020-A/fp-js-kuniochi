@@ -43,7 +43,7 @@
                             class="img-fluid" style="width: auto; height: 300px;">
                         </div>
                         
-                        <h1 class="display-4 m-2" id="countdown">Belum Dimulai</h1>
+                        <h1 class="display-4 m-2" id="countdown" style="margin-top:300px!important">Belum Dimulai</h1>
 
                         <button type="button" class="btn btn-primary m-3 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                             Mulai

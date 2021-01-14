@@ -8,7 +8,7 @@ var canvas = document.querySelector("canvas");
 var scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-camera.position.set(10, 0, 20);
+camera.position.set(0, 0, 20);
 
 // add renderer
 // var renderer = new THREE.WebGLRenderer();
@@ -37,7 +37,7 @@ crystal1.load('/js/models/glb/crystal-1.glb', function(gltf) {
 
 // add orbit control
 var controls = new OrbitControls(camera, renderer.domElement);
-controls.update();
+// controls.update();
 
 // Directional light
 var directionalLight = new THREE.DirectionalLight(0xff1493, 1.0);
@@ -50,6 +50,7 @@ scene.add(directionalLight);
 
 const animate = function () {
     requestAnimationFrame(animate);
+    controls.update();
     renderer.render( scene, camera );
 };
 
