@@ -14,8 +14,6 @@
             }
     </style>
 
-
-
     @if(session('success'))
         <div class="alert alert-success" role="alert">
             {{session('success')}}
@@ -75,7 +73,7 @@
                         <div class="card-body">                            
                             <ul class="list-group mt-3 mb-4 text-left">
                                 <li class="list-group-item d-flex justify-content-between">Selesaikan Grafkom
-                                    <span type="button" class="iconify align-self-center" data-icon="bi-three-dots" data-inline="false"
+                                    <span type="button" class="iconify align-self-center" data-icon="bx:bxs-pencil" data-inline="false"
                                         data-toggle="modal" data-target="#editTugas"></span>
                                 </li>
                                 <li class="list-group-item d-flex justify-content-between disabled">Perbaiki Mockup
