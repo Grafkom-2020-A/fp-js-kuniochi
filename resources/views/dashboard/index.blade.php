@@ -28,7 +28,7 @@
         <title>Dashboard</title>
     </head>
     <body>
-        
+
         @include('dashboard.create')
         @include('dashboard.edit')
 
@@ -69,14 +69,13 @@
                 {{-- bagian kanan --}}
                 {{-- <div class="container col-sm-6"> --}}
                 <div class="col-md-4 order-md-2">
-                    <h1 class="px-3 py-3 pt-md-5 pb-md-4 display-4">Halo, Steve.</i></h1>
-                    {{-- <h1 class="mb-2 display-4">Welcome, {{auth()->user()->name}}!</h1> --}}
+                    <h1 class="px-3 py-3 pt-md-5 pb-md-4 display-4">Halo, {{auth()->user()->name}}.</i></h1>
                 <div class="card-deck mb-3 text-center">
                         <div class="card mb-4 box-shadow">
                         <div class="card-header">
                             <h4 class="my-0 font-weight-normal">Daftar Tugas</h4>
                         </div>
-                        <div class="card-body">                            
+                        <div class="card-body">
                             <ul class="list-group mt-3 mb-4 text-left">
                                 @foreach ($tasks as $task)
                                 <li class="list-group-item d-flex justify-content-between">{{ $task->task_name }}
@@ -86,12 +85,12 @@
                                         <span type="button" class="iconify align-self-center" data-icon="bi:trash-fill" data-inline="false"
                                             data-toggle="modal" data-target="#hapusTugas"></span>
                                     </div>
-                                    
+
                                 </li>
                                 @endforeach
                             </ul>
                             {{-- button trigger modal --}}
-                            <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" 
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal"
                                     data-target="#tambahTugas">Tambah Tugas</button>
                         </div>
                         </div>

@@ -54,30 +54,30 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function mengalihkanlayanan($layanan)
+    public function mengalihkanlayanan($provider)
     {
-        return Socialite::driver($layanan)->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
-    public function memanggilLayanan($layanan)
+    public function memanggilLayanan($provider)
     {
-        $user = Socialite::driver($layanan)->stateless()->user();
-        $authUser = $this->findOrCreateUser($user, $layanan);
+        $user = Socialite::driver($provider)->stateless()->user();
+        $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
         return redirect($this->redirectTo);
     }
 
-    public function findOrCreateUser($user, $layanan)
+    public function findOrCreateUser($user, $provider)
     {
-        $authUser = User::where('id_layanan', $user->id)->first();
+        $authUser = User::where('provider_id', $user->id)->first();
         if($authUser){
             return $authUser;
         }
         return User::create([
             'name'      => $user->name,
             'email'     => $user->email,
-            'layanan'  => strtoupper($layanan),
-            'id_layanan'   => $user->id
+            'provider'  => strtoupper($provider),
+            'provider_id'   => $user->id
         ]);
     }
 }
