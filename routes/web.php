@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/auth/{layanan}', [App\Http\Controllers\Auth\LoginController::class, 'mengalihkanLayanan'])->name('auth-google');
-Route::get('/auth/{layanan}/callback', [App\Http\Controllers\Auth\LoginController::class, 'memanggilLayanan'])->name('google-callback');
+Route::get('/auth/{provider}', [App\Http\Controllers\Auth\LoginController::class, 'mengalihkanLayanan'])->name('auth-google');
+Route::get('/auth/{provider}/callback', [App\Http\Controllers\Auth\LoginController::class, 'memanggilLayanan'])->name('google-callback');
 
 Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
