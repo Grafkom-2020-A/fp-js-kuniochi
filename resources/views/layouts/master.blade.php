@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        @yield('head')
         <title></title>
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
         {{-- bootstrap 4 / 4.3 --}}
@@ -26,18 +27,6 @@
                     <li class="nav-item @yield('Category')">
                         <a class="nav-link" href="/dashboard">Pengaturan</a>
                     </li>
-                    {{-- <li class="nav-item @yield('Book')">
-                        <a class="nav-link" href="/book">Book</a>
-                    </li> --}}
-                    {{-- <li class="nav-item @yield('Promo')">
-                        <a class="nav-link" href="/promo">Promo</a>
-                    </li>
-                    <li class="nav-item @yield('Order')">
-                        <a class="nav-link" href="/order">Order</a>
-                    </li>
-                    <li class="nav-item @yield('Income')">
-                        <a class="nav-link" href="/income">Income</a>
-                    </li> --}}
                     <li class="nav-item @yield('Log Out')">
                         <a class="nav-link" href="{{ route('logout') }}">Keluar</a>
                     </li>

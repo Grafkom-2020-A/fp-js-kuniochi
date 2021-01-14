@@ -8,20 +8,23 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <div class="mb-3">
-                    <label for="taskName" class="form-label">Nama tugas</label>
-                    <input type="text" class="form-control" id="taskName" placeholder="Memasak telur">
+            {{-- <form action="{{ route('dashboard.update', $task->id)}}" method="POST"> --}}
+                {{csrf_field()}}
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="taskName" class="form-label">Nama tugas</label>
+                        <input name="task_name" type="text" class="form-control" id="taskName" placeholder="Memasak telur">
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskInterval" class="form-label">Interval</label>
+                        <input name="task_interval" type="text" class="form-control" id="taskInterval" placeholder="1">
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="taskInterval" class="form-label">Interval</label>
-                    <input type="text" class="form-control" id="taskInterval" placeholder="1">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                    <button class="btn btn-success" type="submit" value="Submit">Simpan</button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
-                <button class="btn btn-success" type="submit" value="Submit">Simpan</button>
-            </div>
+            {{-- </form> --}}
             </div>
         </div>
         </div>

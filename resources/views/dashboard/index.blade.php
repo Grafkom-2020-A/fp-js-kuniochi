@@ -28,6 +28,7 @@
         <title>Dashboard</title>
     </head>
     <body>
+        
         @include('dashboard.create')
         @include('dashboard.edit')
 
@@ -42,7 +43,7 @@
                             class="img-fluid" style="width: auto; height: 300px;">
                         </div>
                         
-                        <h1 class="display-4 m-2">25 : 00 : 00</h1>
+                        <h1 class="display-4 m-2" id="countdown">Belum Dimulai</h1>
 
                         <button type="button" class="btn btn-primary m-3 btn-lg" data-toggle="button" aria-pressed="false" autocomplete="off">
                             Mulai
@@ -79,7 +80,8 @@
                         </div>
                         <div class="card-body">                            
                             <ul class="list-group mt-3 mb-4 text-left">
-                                <li class="list-group-item d-flex justify-content-between">Selesaikan Grafkom
+                                @foreach ($tasks as $task)
+                                <li class="list-group-item d-flex justify-content-between">{{ $task->task_name }}
                                     <div class="d-flex flex-row">
                                         <span type="button" class="iconify align-self-center mr-2" data-icon="bx:bxs-pencil" data-inline="false"
                                             data-toggle="modal" data-target="#editTugas"></span>
@@ -88,14 +90,7 @@
                                     </div>
                                     
                                 </li>
-                                <li class="list-group-item d-flex justify-content-between disabled">Perbaiki Mockup
-                                    <div class="d-flex flex-row">
-                                        <span type="button" class="iconify align-self-center mr-2" data-icon="bx:bxs-pencil" data-inline="false"
-                                            data-toggle="modal" data-target="#editTugas"></span>
-                                        <span type="button" class="iconify align-self-center" data-icon="bi:trash-fill" data-inline="false"
-                                            data-toggle="modal" data-target="#hapusTugas"></span>
-                                    </div>
-                                </li>
+                                @endforeach
                             </ul>
                             {{-- button trigger modal --}}
                             <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" 
@@ -123,6 +118,10 @@
                 </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+
+                @csrf
+                @method('DELETE')
+
                 <button class="btn btn-danger" type="submit" value="Submit">Hapus</button>
             </div>
             </div>
@@ -135,6 +134,7 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/101/three.min.js"></script> --}}
     {{-- <script src="{{ asset('js/build/GLTFLoader.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/build/OrbitControl.js') }}"></script> --}}
+    <script src="{{ asset('js/timer.js') }}"></script>
     <script type="module" src="{{ asset('js/main.js') }}"></script>
 @endsection
 
