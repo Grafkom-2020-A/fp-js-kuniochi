@@ -21,12 +21,6 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item @yield('Home')">
-                        <a class="nav-link" href="/dashboard">Profil</a>
-                    </li>
-                    <li class="nav-item @yield('Category')">
-                        <a class="nav-link" href="/dashboard">Pengaturan</a>
-                    </li>
                     <li class="nav-item @yield('Log Out')">
                         <a class="nav-link" href="{{ route('logout') }}">Keluar</a>
                     </li>

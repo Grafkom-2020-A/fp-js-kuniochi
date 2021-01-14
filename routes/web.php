@@ -25,14 +25,12 @@ Route::get('/auth/{provider}/callback', [App\Http\Controllers\Auth\LoginControll
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    
+
     Route::get('/tari-coba', 'App\Http\Controllers\DashboardController@tariCoba');
 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
     Route::post('/dashboard/create', 'App\Http\Controllers\DashboardController@create');
     Route::get('/dashboard/edit', 'App\Http\Controllers\BookController@edit');
-    Route::get('/dashboard/{id}/delete', 'App\Http\Controllers\BookController@edit');  
 
     Route::resource('/dashboard', 'App\Http\Controllers\DashboardController');
-
 });
